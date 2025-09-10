@@ -13,7 +13,7 @@ public class Registration
   [Required]
   public DateTime RegistrationDate { get; set; }
   [Required]
-  [Range(30, 500)]
+  [Range(30, 10000)]
   public int AttendeeCount { get; set; }
   public string Notes { get; set; }
 

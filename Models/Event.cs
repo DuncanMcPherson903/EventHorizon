@@ -14,10 +14,13 @@ public class Event
   [Required]
   public DateTime DateTime { get; set; }
   [Required]
-  [Range(30, 500)]
+  [Range(30, 50000)]
   public int MaxAttendees { get; set; }
   public int VenueId { get; set; }
+  public Venue Venue { get; set; }
   public int EventCategoryId { get; set; }
+  public EventCategory EventCategory { get; set; }
+  public List<Registration> Registrations { get; set; }
   [Required]
   public bool IsActive { get; set; }
 

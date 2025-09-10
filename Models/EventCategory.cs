@@ -11,4 +11,6 @@ public class EventCategory
   public string Name { get; set; }
   [MaxLength(500)]
   public string Description { get; set; }
+  public int EventId { get; set; }
+  public List<Event> Events { get; set; }
 }
