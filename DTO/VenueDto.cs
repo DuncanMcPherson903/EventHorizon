@@ -1,34 +1,16 @@
-using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
+using EventHorizon.Models;
+namespace EventHorizon.DTO;
 
-namespace EventHorizon.Models;
-
-public class Venue
+public class VenueDto
 {
   public int Id { get; set; }
-  [Required]
-  [MaxLength(100)]
   public string Name { get; set; }
-  [Required]
   public string Address { get; set; }
-  [Required]
   public string City { get; set; }
-  [Required]
   public string State { get; set; }
-  [Required]
   public string ZipCode { get; set; }
-  [Required]
-  [Range(30, 50000)]
   public int MaxCapacity { get; set; }
-  [MaxLength(500)]
   public string Description { get; set; }
-  [Required]
   public bool IsActive { get; set; }
-
   public List<Event> Events { get; set; }
-
-  public Venue()
-  {
-    this.IsActive = true;
-  }
 }
