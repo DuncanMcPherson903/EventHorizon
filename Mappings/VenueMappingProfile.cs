@@ -12,6 +12,8 @@ namespace EventHorizon.Mapping
             // Map from Venue to VenueDto
             CreateMap<Venue, VenueDto>();
 
+            // Map from UpdateVenueDto to Venue
+            CreateMap<VenueUpdateDto, Venue>();
         }
     }
 }

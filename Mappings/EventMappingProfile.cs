@@ -13,6 +13,13 @@ namespace EventHorizon.Mapping
 
       // Map from Event to EventDto
       CreateMap<Event, EventDetailDto>();
+
+      // Map from Event to EventDto
+      CreateMap<Event, CreateEventDto>();
+
+      // Map from Event to EventDto
+      CreateMap<Event, UpdateEventDto>();
+
     }
   }
 }
