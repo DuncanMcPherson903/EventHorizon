@@ -6,6 +6,9 @@ using EventHorizon.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add AutoMapper
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 // Configure database
 builder.Services.AddDbContext<EventHorizonDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("EventHorizonDbConnectionString")));
 
