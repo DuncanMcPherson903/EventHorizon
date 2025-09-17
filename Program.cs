@@ -90,7 +90,7 @@ app.UseAuthorization();
 
 // Map API endpoints
 app.MapAuthEndpoints();
-app.MapCategoryEndpoints();
+app.MapEventCategoryEndpoints();
 app.MapEventEndpoints();
 app.MapRegistrationEndpoints();
 app.MapVenueEndpoints();

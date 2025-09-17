@@ -18,6 +18,10 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
+    modelBuilder.Entity<Event>()
+      .Property(e => e.DateTime)
+      .HasColumnType("timestamp without time zone");
+    
     base.OnModelCreating(modelBuilder);
 
     // Configure entity relationships
@@ -220,7 +224,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 1,
         Name = "MANÁ: VIVIR SIN AIRE TOUR",
         Description = "Live Nation is thrilled to announce MANÁ live at Red Rocks Amphitheatre",
-        DateTime = new DateTime(09 / 10 / 2025),
+        DateTime = new DateTime(2025,9,10,0,0,0),
         MaxAttendees = 9525,
         VenueId = 1,
         EventCategoryId = 3
@@ -230,7 +234,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 2,
         Name = "Billy Idol and Joan Jett & the Blackhearts",
         Description = "Live Nation & AEG are thrilled to announce BILLY IDOL live at Red Rocks Amphitheatre",
-        DateTime = new DateTime(09 / 03 / 2025),
+        DateTime = new DateTime(2025,9,3,0,0,0),
         MaxAttendees = 9525,
         VenueId = 1,
         EventCategoryId = 3
@@ -240,7 +244,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 3,
         Name = "Open mic night with Jean-Luc",
         Description = "Come experience the musical stylings of Starfleet's finest captain",
-        DateTime = new DateTime(02 / 22 / 2365),
+        DateTime = new DateTime(2365,2,22,0,0,0),
         MaxAttendees = 30,
         VenueId = 3,
         EventCategoryId = 3
@@ -250,7 +254,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 4,
         Name = "Warp Drives and You!",
         Description = "Learn how space warp has changed our lives for the better (and worse)",
-        DateTime = new DateTime(11 / 03 / 2365),
+        DateTime = new DateTime(2365,11,3,0,0,0),
         MaxAttendees = 30,
         VenueId = 3,
         EventCategoryId = 5
@@ -260,7 +264,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 5,
         Name = "How to treat your Tribble",
         Description = "A hands-on workshop focused on tribble care and maintenance",
-        DateTime = new DateTime(06 / 01 / 2366),
+        DateTime = new DateTime(2366,6,1,0,0,0),
         MaxAttendees = 9525,
         VenueId = 3,
         EventCategoryId = 2
@@ -270,7 +274,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 6,
         Name = "Rotary Club Chattanooga",
         Description = "Club designed to help the up-building of Chattanooga and vicinity, to encourage the exchange of business ideas and methods",
-        DateTime = new DateTime(09 / 04 / 2025),
+        DateTime = new DateTime(2025,9,4,0,0,0),
         MaxAttendees = 1000,
         VenueId = 2,
         EventCategoryId = 4
@@ -280,7 +284,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 7,
         Name = "Chattanooga Comic Con",
         Description = "Chattanooga's newest comic and pop culture convention",
-        DateTime = new DateTime(09 / 27 / 2025),
+        DateTime = new DateTime(2025,9,27,0,0,0),
         MaxAttendees = 40000,
         VenueId = 2,
         EventCategoryId = 1
@@ -290,7 +294,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 8,
         Name = "Erlanger Neuroscience Conference",
         Description = "Symposium offering neuroscience professionals an opportunity to network and grow in their fields",
-        DateTime = new DateTime(09 / 26 / 2025),
+        DateTime = new DateTime(2025,9,26,0,0,0),
         MaxAttendees = 10000,
         VenueId = 2,
         EventCategoryId = 1
@@ -300,7 +304,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 9,
         Name = "American Grappling Federation",
         Description = "Come get yo ass whooped",
-        DateTime = new DateTime(09 / 06 / 2025),
+        DateTime = new DateTime(2025,9,6,0,0,0),
         MaxAttendees = 1000,
         VenueId = 2,
         EventCategoryId = 1
@@ -310,7 +314,7 @@ public class EventHorizonDbContext : IdentityDbContext<IdentityUser>
         Id = 10,
         Name = "Dare to Dance benefiting the Kidney Foundation",
         Description = "Time to dance that kidney failure out the door!",
-        DateTime = new DateTime(10 / 25 / 2025),
+        DateTime = new DateTime(2025,10,25,0,0,0),
         MaxAttendees = 2000,
         VenueId = 2,
         EventCategoryId = 2
