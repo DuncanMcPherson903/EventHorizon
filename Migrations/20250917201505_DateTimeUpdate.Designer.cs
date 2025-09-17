@@ -3,6 +3,7 @@ using System;
 using EventHorizon.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EventHorizon.Migrations
 {
     [DbContext(typeof(EventHorizonDbContext))]
-    partial class EventHorizonDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250917201505_DateTimeUpdate")]
+    partial class DateTimeUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

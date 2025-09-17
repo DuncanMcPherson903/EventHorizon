@@ -10,6 +10,8 @@ namespace EventHorizon.Mapping
     {
       // Map from Event to EventDto
       CreateMap<EventCategory, EventCategoryDto>();
+
+      CreateMap<EventCategoryDto, EventCategory>();
     }
   }
 }

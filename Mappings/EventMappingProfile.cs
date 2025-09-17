@@ -9,10 +9,20 @@ namespace EventHorizon.Mapping
     public EventMappingProfile()
     {
       // Map from Event to EventDto
-      CreateMap<Event, EventDto>();
+      CreateMap<Event, EventDto>()
+        .ForMember(dest => dest.VenueName, opt =>
+          opt.MapFrom(src => src.Venue.Name))
+        .ForMember(dest => dest.CategoryName, opt =>
+          opt.MapFrom(src => src.EventCategory.Name));
 
       // Map from Event to EventDto
-      CreateMap<Event, EventDetailDto>();
+      CreateMap<Event, EventDetailDto>()
+        .ForMember(dest => dest.VenueName, opt =>
+          opt.MapFrom(src => src.Venue.Name))
+        .ForMember(dest => dest.VenueLocation, opt =>
+          opt.MapFrom(src => $"{src.Venue.Address}, {src.Venue.City}, {src.Venue.State}, {src.Venue.ZipCode}"))
+        .ForMember(dest => dest.CategoryName, opt =>
+          opt.MapFrom(src => src.EventCategory.Name));
 
       // Map from Event to EventDto
       CreateMap<Event, CreateEventDto>();
